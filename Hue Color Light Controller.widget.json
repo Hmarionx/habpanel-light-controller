@@ -1,0 +1,29 @@
+{
+    "template": "<style>\n\n.hue-controller-table {\n  width: 100%;\n  border-collapse: separate; \n  border-spacing: 8px;\n  border-radius: 10px;  \n} \n.hue-rounded-border {\n  border: 2px solid #76899e; \n  border-radius: 10px;  \n}\n#dimmer-slider .rz-bubble {\n  color: #FFAA00;\n}\n#dimmer-slider .rz-pointer {\n  background-color: #FFAA00;\n}\n#dimmer-slider .rzslider .rz-bar.rz-selection {\n  background-color: #FFAA00;\n}\n.caret#hue-controller-caret {\n  position: absolute;\n  left: 95%;\n  top: 45%;\n  color: white;  \n}\n.hue-select {\n  padding-right: 10px;\n}\n.action-button#single-button {\n  color: #FFAA00;\n  background-color: rgb(95,95,95);\n  border: 1px solid #76899e;\n  overflow: hidden;\n  width: 100%;\n  border-radius: 5px;\n  font-size: 18px;\n  font-weight: normal;\n}\nul.dropdown-menu#hue-controller-dropdown {\n  background-color: rgb(200,200,200);\n  text-align: center;\n  border: 0px;\n  border-radius: 5px;\n  width: 100%;\n} \nul.dropdown-menu#hue-controller-dropdown li {\n  color: #000;\n  border-collapse: separate;\n  padding: 5px;\n  border-radius: inherit;  \n} \n  \n</style>\n\n<table class=\"hue-controller-table\">\n  <tr>\n    <td ng-if=\"config.showTitle == true\" colspan=\"2\">\n      <h3 style=\"color: #ffaa00; line-height: .5em;\">{{config.title}}</h3>\n    </td>\n  </tr>\n  <tr>\n    <td width=\"80%\" class=\"hue-rounded-border\">\n      <div class=\"slider-div\" ng-init='dimmerModel={\"name\": \"dimmer\", \"item\": config.dimmer, \n                          \"floor\" : 0, \"ceil\": 100, \"step\": 1,\n                          \"hidelabel\" : \"true\", \"hidelimits\": \"true\" }'>\n        <widget-slider ng-model=\"dimmerModel\" id=\"dimmer-slider\"/>\n      </div>\n    </td>\n  </tr>\n</table>\n\n",
+    "settings": [
+        {
+            "type": "string",
+            "id": "title",
+            "label": "Title",
+            "default": "Light",
+            "description": "Title to display at top of widget"
+        },
+        {
+            "type": "checkbox",
+            "id": "showTitle",
+            "label": "Show Title",
+            "default": true,
+            "description": "Show or hide title"
+        },
+        {
+            "type": "item",
+            "id": "dimmer",
+            "label": "Dimmer",
+            "description": "Dimmer item for light"
+        }
+    ],
+    "name": "Light Controller",
+    "author": "Herve Marion",
+    "description": "Controller for lights",
+    "readme_url": "https://community.openhab.org/t/23304"
+}
